@@ -1,19 +1,17 @@
 import { UserButton } from "@clerk/clerk-react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./home.scss";
 import Total from "../components/Total";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faMoneyCheckDollar,
-	faMoneyBillTrendUp,
-	faTags,
-	faThumbsUp,
-	faUsers,
-} from "@fortawesome/free-solid-svg-icons";
+import {} from "@fortawesome/free-regular-svg-icons";
 import { BarChart } from "../components/BarChart";
 import { UserData, GuestData } from "../components/data";
 import { DoughnutChart } from "../components/DoughChart";
 import Modal from "../components/modal";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Home = () => {
 	const [showModal, setShowModal] = useState(false);
@@ -96,17 +94,25 @@ const Home = () => {
 							<p>{user.name}</p>
 							<div>
 								<div>
+									<WhatsAppIcon color="success" />
 									<span>{user.phone}</span>
 								</div>
+								{user.instalink && (
+									<div>
+										<InstagramIcon color="warning" />
+										<span>{user.instalink}</span>
+									</div>
+								)}
 								<div>
-									<span>{user.instalink}</span>
-								</div>
-								<div>
+									<EmailOutlinedIcon color="primary" />
 									<span>{user.email}</span>
 								</div>
-								<div>
-									<span>{user.ytlink}</span>
-								</div>
+								{user.ytlink && (
+									<div>
+										<YouTubeIcon color="error" />
+										<span>{user.ytlink}</span>
+									</div>
+								)}
 							</div>
 						</div>
 					) : (

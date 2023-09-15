@@ -1,0 +1,33 @@
+@import "../Index.scss";
+.headerContainer {
+	position: sticky;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	// border: 1px plum solid;
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	& > :nth-child(1) {
+	}
+	& > :nth-child(2) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		& > :nth-child(1) {
+			padding: 0 10px;
+			border-radius: 6px;
+			background-color: white;
+			@include mobile {
+				display: none;
+			}
+			input {
+				border: none;
+				outline: none;
+				padding: 8px 12px;
+			}
+		}
+	}
+}

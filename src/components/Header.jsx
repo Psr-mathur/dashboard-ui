@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { UserButton } from "@clerk/clerk-react";
+import "./header.scss";
 const Header = () => {
 	return (
 		<div className="headerContainer">

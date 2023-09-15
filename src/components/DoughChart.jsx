@@ -33,7 +33,7 @@ const options = {
 		},
 		title: {
 			display: true,
-			text: "My Doughnut Chart", // Title text
+			text: "Top Products", // Title text
 			font: {
 				size: 16, // Title font size
 			},
@@ -44,7 +44,7 @@ const options = {
 
 export const DoughnutChart = () => {
 	return (
-		<div style={{ width: "100%", height: "225px" }}>
+		<div style={{ width: "300px", height: "225px" }}>
 			<Doughnut data={data} options={options} />
 		</div>
 	);

@@ -1,6 +1,15 @@
 // components/BarChart.js
+import { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 export const BarChart = ({ chartData }) => {
+	const [barWidth, setBarwidth] = useState(null);
+	useEffect(() => {
+		if (window.innerWidth > 600) {
+			setBarwidth(50);
+		} else {
+			setBarwidth(20);
+		}
+	}, [window.innerWidth]);
 	return (
 		<div style={{ width: "100%", height: "325px" }}>
 			<Bar
@@ -15,7 +24,7 @@ export const BarChart = ({ chartData }) => {
 							display: true,
 						},
 					},
-					barThickness: 50,
+					barThickness: barWidth,
 					responsive: true,
 					maintainAspectRatio: false,
 					layout: {

@@ -1,7 +1,9 @@
+@import "../Index.scss";
 .homeContainer {
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
+	overflow-x: hidden;
 	// background-color: #e9f9eb;
 	padding-right: 5px;
 	height: calc(100vh - 110px);
@@ -10,6 +12,9 @@
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
 		width: 5px;
+		@include mobile {
+			display: none;
+		}
 	}
 	&::-webkit-scrollbar-track {
 		background-color: white;
@@ -23,8 +28,18 @@
 		justify-content: space-between;
 		flex-wrap: wrap;
 		gap: 10px;
+		@include tablet {
+			gap: 20px 50px;
+			justify-content: space-around;
+		}
+		@include mobile {
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+		}
 	}
 	.barChartContainer {
+		// overflow-x: hidden;
 		width: 100%;
 		height: 325px;
 		// overflow: hidden;
@@ -41,21 +56,29 @@
 		// background-color: white;
 		gap: 20px;
 		border-radius: 16px;
+		@include mobile {
+			flex-direction: column;
+		}
 
 		.donutChartContainer {
 			flex: 1;
 			border-radius: 16px;
 			background-color: white;
 			box-shadow: 0 0 10px 1px rgba(199, 193, 193, 0.2);
+			// background-color: #4285f4;
 		}
 		.profileCreateContainer {
 			flex: 1;
 			border-radius: 16px;
 			background-color: white;
 			box-shadow: 0 0 10px 1px rgba(199, 193, 193, 0.2);
+
 			.toCreate {
 				width: 100%;
 				height: 100%;
+				@include mobile {
+					height: 225px;
+				}
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -84,152 +107,31 @@
 				justify-content: center;
 				gap: 10px;
 				& > p {
+					// border: 1px #4ad15f solid;
 					// background: #000;
 					font-size: 32px;
-					// padding-bottom: 15px;
+					margin: 0;
+					padding-bottom: 15px;
 				}
 				& > div {
-					background-color: #4ad15f;
 					width: 100%;
 					display: grid;
 					grid-template-columns: 1fr 1fr;
-					gap: 20px;
-					// align-content: space-between;
-					// justify-content: space-between;
-					& > :nth-child(odd) {
-						display: flex;
-						align-items: center;
-						gap: 8px;
-						justify-content: flex-start;
+					gap: 20px 75px;
+					@include mobile {
+						grid-template-columns: 1fr;
+						gap: 20px;
 					}
-					& > :nth-child(even) {
+					& > div {
 						display: flex;
 						align-items: center;
 						gap: 8px;
-						justify-content: flex-end;
+						& > span {
+							text-decoration: underline;
+						}
 					}
 				}
 			}
-		}
-	}
-}
-
-.sidebarContainer {
-	padding: 3% 2%;
-	// border: 1px rgb(182, 222, 22) solid;
-	.sidebar {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		// border: 1px rgb(133, 4, 153) solid;
-		width: 100%;
-		color: white;
-		background-color: #4285f4;
-		& > :nth-child(1) {
-			// padding: 1% 0 2% 0;
-			width: 75%;
-			// border: 1px red solid;
-		}
-		& > :nth-child(2) {
-			width: 75%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-direction: column;
-			gap: 20px;
-			// border: 1px red solid;
-			div {
-				// border: 1px red solid;
-				width: 100%;
-				display: flex;
-				align-items: center;
-				justify-content: start;
-				gap: 10px;
-			}
-		}
-	}
-}
-
-.headerContainer {
-	position: sticky;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	// border: 1px plum solid;
-	* {
-		padding: 0;
-		margin: 0;
-	}
-	& > :nth-child(1) {
-	}
-	& > :nth-child(2) {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 20px;
-		& > :nth-child(1) {
-			padding: 0 10px;
-			border-radius: 6px;
-			background-color: white;
-			input {
-				border: none;
-				outline: none;
-				padding: 8px 12px;
-			}
-		}
-	}
-}
-
-.totalCon {
-	// flex: 1;
-	min-width: 200px;
-	max-width: 200px;
-	padding: 10px 16px;
-	// border: 1px red solid;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: start;
-	gap: 10px;
-	background-color: white;
-	border-radius: 16px;
-	box-shadow: 0 0 10px 1px rgba(199, 193, 193, 0.2);
-	// overflow: hidden;
-	p {
-		margin: 0;
-		padding: 0;
-		font-weight: bold;
-		font-size: 22px;
-	}
-	& > div,
-	& > span {
-		width: 100%;
-		height: 100%;
-		// border: 1px red solid;
-		font-size: 13px;
-	}
-	& > div {
-		display: flex;
-		align-items: end;
-		justify-content: space-between;
-		// border: 1px red solid;
-		span {
-			padding: 5px 8px;
-			border-radius: 40px;
-			background-color: #e9f9eb;
-			font-weight: bold;
-			font-size: 10px;
-			color: #4ad15f;
-		}
-		div {
-			height: 30px;
-			width: 30px;
-			border-radius: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background-color: #4ad15f;
 		}
 	}
 }

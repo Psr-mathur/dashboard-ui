@@ -5,15 +5,16 @@ import {
 	faCircleUser,
 } from "@fortawesome/free-regular-svg-icons";
 import { faTags, faGear, faSnowflake } from "@fortawesome/free-solid-svg-icons";
+import "./sidebar.scss";
 
 const Sidebar = () => {
 	return (
 		<div className="sidebarContainer">
 			<div className="sidebar">
-				<div className="sb-header">
+				<div>
 					<h1>Board.</h1>
 				</div>
-				<div className="sb-lists">
+				<div>
 					<div>
 						<FontAwesomeIcon icon={faSnowflake} />
 						<span>Dashboard</span>

@@ -32,6 +32,7 @@ const Modal = ({ showModal, setShowModal, setUser }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setUser({ ...tempuser });
+		setShowModal(false);
 	};
 	return (
 		<div className="modalCon">

@@ -1,4 +1,5 @@
 // import { faMoneyBillTrendUp } from "@fortawesome/free-regular-svg-icons";
+import "./total.scss";
 
 const Total = ({ title, children, val, grow, bgColor }) => {
 	return (
