@@ -2,12 +2,13 @@ import { SignIn, useSignIn } from "@clerk/clerk-react";
 import React, { useEffect } from "react";
 import "./sign.scss";
 import Leftpart from "../components/authlogos";
+import Loading from "../components/Loading";
 
 const Login = () => {
 	const { isLoaded } = useSignIn();
 
 	if (!isLoaded) {
-		return <h5>Loading...</h5>;
+		return <Loading />;
 	}
 	return (
 		<div className="signpageContainer">

@@ -5,7 +5,8 @@
 	width: 100%;
 	@include mobile {
 		flex-direction: column;
-		height: 140dvh;
+		// height: 140dvh;
+		height: max-content;
 	}
 	.leftpartContainer {
 		flex: 1;
