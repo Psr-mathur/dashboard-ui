@@ -6,13 +6,17 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { faTags, faGear, faSnowflake } from "@fortawesome/free-solid-svg-icons";
 import "./sidebar.scss";
+import CloseIcon from "@mui/icons-material/Close";
 
-const Sidebar = () => {
+const Sidebar = ({ setOpenMenu }) => {
 	return (
 		<div className="sidebarContainer">
 			<div className="sidebar">
 				<div>
 					<h1>Board.</h1>
+					<span onClick={() => setOpenMenu(false)}>
+						<CloseIcon fontSize="large" />
+					</span>
 				</div>
 				<div>
 					<div>

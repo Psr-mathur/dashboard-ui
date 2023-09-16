@@ -57,6 +57,7 @@ const Modal = ({ showModal, setShowModal, setUser }) => {
 								name="name"
 								onChange={handleChange}
 								value={tempuser.name}
+								required
 							/>
 							<label htmlFor="email">Enter Email*</label>
 							<input
@@ -65,6 +66,7 @@ const Modal = ({ showModal, setShowModal, setUser }) => {
 								placeholder="Eg. Jhondoe@email.com"
 								onChange={handleChange}
 								value={tempuser.email}
+								required
 							/>
 							<label htmlFor="phone">Enter Phone*</label>
 							<input
@@ -73,9 +75,18 @@ const Modal = ({ showModal, setShowModal, setUser }) => {
 								placeholder="Eg. 7512345678"
 								onChange={handleChange}
 								value={tempuser.phone}
+								required
 							/>
+							<button
+								style={{
+									marginTop: "10px",
+									marginLeft: "auto",
+								}}
+								onClick={ChangePage}
+							>
+								Next
+							</button>
 						</div>
-						<button onClick={ChangePage}>Next</button>
 					</>
 				) : (
 					<>
@@ -96,11 +107,16 @@ const Modal = ({ showModal, setShowModal, setUser }) => {
 								onChange={handleChange}
 								value={tempuser.ytlink}
 							/>
+							<div style={{ marginTop: "10px" }}>
+								<button onClick={handleSubmit}>Submit</button>
+								<button
+									className="backButton"
+									onClick={ChangePage}
+								>
+									Back
+								</button>
+							</div>
 						</div>
-						<button onClick={handleSubmit}>Submit</button>
-						<button className="backButton" onClick={ChangePage}>
-							Back
-						</button>
 					</>
 				)}
 			</div>

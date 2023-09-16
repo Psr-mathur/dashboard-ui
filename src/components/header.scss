@@ -5,11 +5,27 @@
 	align-items: center;
 	justify-content: space-between;
 	// border: 1px plum solid;
-	* {
+	& > :nth-child(1) *,
+	& > :nth-child(2) * {
 		padding: 0;
 		margin: 0;
 	}
 	& > :nth-child(1) {
+		// header part
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		& > :first-child {
+			// menu icon
+			display: none;
+			cursor: pointer;
+			@include mobile {
+				display: block;
+			}
+			@include tablet {
+				display: block;
+			}
+		}
 	}
 	& > :nth-child(2) {
 		display: flex;
@@ -29,5 +45,21 @@
 				padding: 8px 12px;
 			}
 		}
+	}
+	.mobileSidebar {
+		display: none;
+		@include mobile {
+			display: block;
+		}
+		@include tablet {
+			display: block;
+		}
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		// border: 1px red solid;
+		width: 275px;
+		background-color: #4285f4;
 	}
 }
